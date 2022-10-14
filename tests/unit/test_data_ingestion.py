@@ -1,6 +1,8 @@
 import pytest
 from deepClassifier.entity import DataIngestionConfig
 from deepClassifier.components import DataIngestion
+from deepClassifier.constants import *
+from deepClassifier.utils import read_yaml, create_directories
 from pathlib import Path
 import os
 
@@ -11,6 +13,7 @@ class Test_DataIngestion_download:
         local_data_file="tests/data/sample_data.zip",
         unzip_dir="tests/data/"
     )
+
     def test_download(self):
         data_ingestion = DataIngestion(config= self.data_ingestion_config)
         data_ingestion.download_file()
