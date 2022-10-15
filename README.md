@@ -30,3 +30,5 @@ STEP 4: Use context manager of mlflow to start run and then log metrics, params 
 
 ## Sample data for testing-
 https://raw.githubusercontent.com/satyazmx/dataset/main/sample_data.zip
+
+![img](https://raw.githubusercontent.com/satyazmx/dataset/main/Pytest_Cases.png)
