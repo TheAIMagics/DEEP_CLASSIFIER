@@ -8,20 +8,18 @@ from deepClassifier.utils import read_yaml, create_directories
 
 class Test_Prepare_BaseModel:
     def test_base_model(self):
-        config_filepath = CONFIG_FILE_PATH
-        params_filepath = PARAMS_FILE_PATH
-        cfp = read_yaml(config_filepath)
-        pfp = read_yaml(params_filepath)
+        config_fp = read_yaml(CONFIG_FILE_PATH)
+        params_fp = read_yaml(PARAMS_FILE_PATH)
 
         prepare_basemodel_config = PrepareBaseModelConfig(
-            root_dir=cfp.prepare_base_model.root_dir,
-            base_model_path=cfp.prepare_base_model.base_model_path,
-            updated_base_model_path=cfp.prepare_base_model.updated_base_model_path,
-            params_learning_rate=pfp.LEARNING_RATE,
-            params_include_top=pfp.INCLUDE_TOP,
-            params_weights=pfp.WEIGHTS,
-            params_image_size=pfp.IMAGE_SIZE,
-            params_classes=pfp.CLASSES
+            root_dir=config_fp.prepare_base_model.root_dir,
+            base_model_path=config_fp.prepare_base_model.base_model_path,
+            updated_base_model_path=config_fp.prepare_base_model.updated_base_model_path,
+            params_learning_rate=params_fp.LEARNING_RATE,
+            params_include_top=params_fp.INCLUDE_TOP,
+            params_weights=params_fp.WEIGHTS,
+            params_image_size=params_fp.IMAGE_SIZE,
+            params_classes=params_fp.CLASSES
         )
 
         base_model=PrepareBaseModel(config=prepare_basemodel_config)
@@ -31,20 +29,18 @@ class Test_Prepare_BaseModel:
 
 class Test_Updated_Base_Model:
     def test_get_updated_base_model(self):
-        config_filepath = CONFIG_FILE_PATH
-        params_filepath = PARAMS_FILE_PATH
-        cfp = read_yaml(config_filepath)
-        pfp = read_yaml(params_filepath)
+        config_fp = read_yaml(CONFIG_FILE_PATH)
+        params_fp = read_yaml(PARAMS_FILE_PATH)
 
         prepare_basemodel_config = PrepareBaseModelConfig(
-            root_dir=cfp.prepare_base_model.root_dir,
-            base_model_path=cfp.prepare_base_model.base_model_path,
-            updated_base_model_path=cfp.prepare_base_model.updated_base_model_path,
-            params_learning_rate=pfp.LEARNING_RATE,
-            params_include_top=pfp.INCLUDE_TOP,
-            params_weights=pfp.WEIGHTS,
-            params_image_size=pfp.IMAGE_SIZE,
-            params_classes=pfp.CLASSES
+            root_dir=config_fp.prepare_base_model.root_dir,
+            base_model_path=config_fp.prepare_base_model.base_model_path,
+            updated_base_model_path=config_fp.prepare_base_model.updated_base_model_path,
+            params_learning_rate=params_fp.LEARNING_RATE,
+            params_include_top=params_fp.INCLUDE_TOP,
+            params_weights=params_fp.WEIGHTS,
+            params_image_size=params_fp.IMAGE_SIZE,
+            params_classes=params_fp.CLASSES
         )
 
         base_model_updated=PrepareBaseModel(config=prepare_basemodel_config)
